@@ -4,9 +4,11 @@ import React from "react";
 import { CiBookmarkCheck, CiLogout } from "react-icons/ci";
 import { SideBarItem } from "./SideBarItem";
 import {
+  IoBasketOutline,
   IoCalendar,
   IoCalendarOutline,
   IoCheckboxOutline,
+  IoCodeWorkingOutline,
   IoListOutline,
 } from "react-icons/io5";
 
@@ -22,6 +24,16 @@ export const SideBar = (): React.ReactNode => {
       url: "/dashboard/server-todos",
       title: "Server Actions",
       Icon: <IoListOutline />,
+    },
+    {
+      url: "/dashboard/cookies",
+      title: "Cookies",
+      Icon: <IoCodeWorkingOutline />,
+    },
+    {
+      url: "/dashboard/products",
+      title: "Productos",
+      Icon: <IoBasketOutline />,
     },
   ];
   return (
