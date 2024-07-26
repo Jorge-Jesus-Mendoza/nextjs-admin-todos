@@ -18,6 +18,20 @@ export const addCookieCart = (id: string) => {
   setCookie("cart", JSON.stringify(cookieCart));
 };
 
+export const decreaseCookieCart = (id: string) => {
+  const cookieCart = getCookieCart();
+
+  if (!cookieCart) return;
+  const itemsInCart = cookieCart[id] - 1;
+  if (itemsInCart <= 0) {
+    delete cookieCart[id];
+  } else {
+    cookieCart[id] = itemsInCart;
+  }
+
+  setCookie("cart", JSON.stringify(cookieCart));
+};
+
 export const removeProductFromCart = (id: string) => {
   const cookieCartRetrieved = getCookieCart();
   const cleanedCart = { ...cookieCartRetrieved };
