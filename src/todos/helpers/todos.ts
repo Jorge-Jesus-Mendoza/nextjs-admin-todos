@@ -17,8 +17,6 @@ export const updateTodo = async (
     },
   }).then((res) => res.json());
 
-  console.log({ todo });
-
   return todo;
 };
 
@@ -36,8 +34,6 @@ export const createTodo = async (description: string): Promise<Todo> => {
     },
   }).then((res) => res.json());
 
-  console.log({ todo });
-
   return todo;
 };
 
@@ -51,8 +47,6 @@ export const deleteCompletedTodos = async (): Promise<Todo> => {
       "Content-Type": "application/json",
     },
   }).then((res) => res.json());
-
-  console.log({ todos });
 
   return todos;
 };

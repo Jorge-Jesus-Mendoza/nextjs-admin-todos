@@ -76,7 +76,9 @@ export const SideBar = async (): Promise<React.JSX.Element> => {
           <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
             {session?.user?.name}
           </h5>
-          <span className="hidden text-gray-400 lg:block">Admin.</span>
+          <span className="hidden text-gray-400 lg:block capitalize">
+            {session?.user.roles.join(",")}
+          </span>
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">

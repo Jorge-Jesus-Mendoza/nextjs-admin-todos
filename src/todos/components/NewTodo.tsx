@@ -10,11 +10,14 @@ export const NewTodo = () => {
   const [description, setDescription] = useState("");
   const router = useRouter();
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (description.trim().length === 0) return;
 
-    addTodo(description);
+    // addTodo(description);
+
+    await api.createTodo(description);
+    router.refresh();
     setDescription("");
   };
 
